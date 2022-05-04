@@ -1,3 +1,6 @@
+// Written by Nicholas Hussain 
+// Adapted from below stuff from Prof Levy
+
 /*Jake Levy
 
 Code adapted from : https://branche.online/mongodb-with-promises/
@@ -19,6 +22,7 @@ dbName is a string that names the DB you want to connect to.  You can opt to
 modify this file to hardcode the DB name if you prefer.
 
 */
+
 const MongoClient = require('mongodb').MongoClient;
 var getID = require('mongodb').ObjectID();
 var url = "mongodb://127.0.0.1:27017/";
