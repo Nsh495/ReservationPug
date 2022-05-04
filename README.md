@@ -8,6 +8,9 @@
 Frank and Nick Backend
 Jose and Chris Frontend 
 
+Specific responsibilities are in the older git repo's files. 
+
+
 # INSTALLATION INSTRUCTIONS 
 
 1. Make sure these dependencies are installed:
@@ -23,7 +26,7 @@ Jose and Chris Frontend
 4. Input data
 5. Enjoy
 
-# This is our final draft of the project, we have several other repos documenting our progress, before we had to trim features and make drastic changes 
+# This is our final draft of the project, we have several other repos documenting our progress, before we had to trim features and make drastic changes. 
 
 Old repo 1: https://github.com/fnemeth10/reservation_system_final_repo
 Old repo 2: https://github.com/fnemeth10/apw_final_draft 
