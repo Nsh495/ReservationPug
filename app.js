@@ -1,11 +1,15 @@
+// Written by Nicholas Hussain 
+// Inspired by https://github.com/profjake/APWJS_Final_Lab
+// And isnpired by https://github.com/athoutam1/Restaurant-Reservation/tree/master/api
+
 //var tracker = require("tracker");
-var http = require("http");
-var qString = require("querystring");
+const http = require("http");
+const qString = require("querystring");
 //this calls the let db={}; and instantiates the db for us
 let dbManager = require('./dbManager');
 let express = require("express");
 let app = express();
-var ObjectID = require('mongodb').ObjectId;
+const ObjectID = require('mongodb').ObjectId;
 let bp = require('body-parser');
 
 app.use(bp.urlencoded({extended: true}))
@@ -14,7 +18,8 @@ app.use(bp.json())
 
 let mongoose = require('mongoose');
 mongoose.set('bufferCommands', false);
-var resCol=require('./models/newRes');
+const resCol=require('./models/newRes')
+
 
 
 function docifyRes(params){
@@ -22,8 +27,7 @@ function docifyRes(params){
     firstName: params.firstName,
     lastName: params.lastName, 
     email: params.email,
-    capacity: params.capacity, 
-    tableName: params.tableName
+    capacity: params.capacity
 });
     return doc;
 }
