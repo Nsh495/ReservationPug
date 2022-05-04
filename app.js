@@ -93,7 +93,7 @@ app.post('/view',async function(req,res){
     try{
     const searchID = req.body.email
     console.log(searchID)
-    const reservations = await resCol.find({"email": searchID}).exec();
+    const reservations = await resCol.find({searchID}).exec();
     console.log(reservations);
 
     res.render('view',{results: reservations})
@@ -103,7 +103,7 @@ app.post('/view',async function(req,res){
 
 })
 app.get('/Delete',function(req,res){
-    res.render('Delete');s
+    res.render('Delete');
 })
 app.get('/manageRes', function(req,res){
     res.render('manageRes');
