@@ -1,0 +1,29 @@
+extends layout
+block content
+
+  form(method="POST")
+    |First Name:
+    input(name="firstName" value="")
+    br
+    |Last Name:
+    input(name="lastName" value="")
+    br
+    |Email:
+    input(name="email" value="sample@demo.com")
+    br
+    |Table Size:
+    input(name="capacity" value="")
+    br
+    |Restaurtant Name:
+    select(name="tableName")
+     option(name="Red Robin" value="Red Robin") Red Robin's
+     option(name="Chipotle" value="Chipotle") Chipotle
+     option(name="Applebee's" value="Applebee's") Applebee's
+    br
+    input(type="submit" value="Submit!")
+    input(type="reset" value="Clear!")
+  br
+
+  if msg
+    #message
+    |#{msg}
