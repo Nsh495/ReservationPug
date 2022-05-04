@@ -30,18 +30,18 @@ let myDB; //let provides closure, so only one local copy of our db. Th
 
 //you can call connect in your code, but it is not advised, it is safer to use
 //"get" to initialize and use connections.
-var connect = async function(dbName){
+var connect = async function(dbFinal){
     try{
 	await mongoClient.connect();
 //	await mongoClient.db("admin").command({ ping: 1 });
 
-	myDB=mongoClient.db(dbName);
+	myDB=mongoClient.db(dbFinal);
 	
 	if (!myDB){
 	    throw new Error("DB Connection Failed to start!");
 	}
 	else{
-	    console.log(`Connected to ${dbName}`);
+	    console.log(`Connected to ${dbFinal}`);
 	    return myDB;
 	}
     } catch(e){

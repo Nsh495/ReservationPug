@@ -1,29 +1,21 @@
+extends layout
 block content
  body
-
-
-    
-    email
-  h2 Search for An Activity
+  h2 Search for A Reservation
   form(method="post")
-   select(name="prop")
-    option(value="lastName") lastname
-    option(value="email") email
-   input(name="value")
+   |Email
+   input(name="email")
    br
    input(type="submit" value="Search!")
    |
    input(type="reset" value="Clear!")
-
-   if results
-     h3 Customer Search Results for #{results.prop} : #{results[results.prop]}
-     -var count=0
-     each val in results.dataArr
-      p Customer #{count+=1}
-       a(href="/lastname/" + val.lastname) #{val.lastname}
-       |
-       |
-       a(href="/email/" + val.email) The emails |
+  if results 
+   h3 Email Search Results for #{email}
+   ul
+    each val in results
+     li= val
+     
+  
 
 //-
 //-    Typed by Jose De Carvalho and CJ Lamonica
