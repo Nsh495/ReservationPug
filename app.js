@@ -1,3 +1,7 @@
+// Written by Nicholas Hussain 
+// Inspired by https://github.com/profjake/APWJS_Final_Lab
+// And isnpired by https://github.com/athoutam1/Restaurant-Reservation/tree/master/api
+
 //var tracker = require("tracker");
 const http = require("http");
 const qString = require("querystring");
