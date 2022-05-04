@@ -52,13 +52,15 @@ app.post('/makeRes', function(req,res){
     const capacity = req.body.capacity;
 
     try{
-        const makingNew = new resCol({firstName:firstName, lastName:lastName,email:email,capacity:capacity });
+        const makingNew = new docifyRes({firstName:firstName, lastName:lastName,email:email,capacity:capacity });
+        makingNew.save()
         console.log(makingNew)
+        //makingNew.save()
         res.redirect('/thankYou');
     }catch(e){
         console.log(e)
     }
-    // postData = '';
+  //  postData = '';
     // req.on('data', (data) =>{
 	// postData+=data;
     // });
@@ -89,14 +91,20 @@ app.get('/thankYou', function(req,res){
 app.get('/view', function(req,res,next){
     res.render('view');
 })
-app.post('/view',async function(req,res){
+app.post('/view', async function(req,res){
     try{
     const searchID = req.body.email
     console.log(searchID)
-    const reservations = await resCol.find({searchID}).exec();
-    console.log(reservations);
+
+    const reservations = await resCol.find({email:searchID}).exec();
+    const docView = docifyRes(reservations)
+
+    console.log(docView)
+
 
     res.render('view',{results: reservations})
+
+    
     }catch(e){
         console.log(e)
     }
